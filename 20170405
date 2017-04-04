@@ -1,0 +1,22 @@
+Some git commands usually used in sony mobile.
+
+我现在在索尼的现场工作的时候，经常用到一些github的命令，我想在这里记录一下。
+
+1.创建工作区 repo start temp .
+  创建一个叫做temp的工作区，这个工作区也就是你本机文件系统的工作区内容。
+2.git add -A
+  把自己所有工作区的内容全部增加到缓冲区,等待上传服务器。
+3.repo update
+  把自己的所有缓冲区的内容全部上传到服务器。
+4.git set header --hard 
+  把自己的工作区强制设定到最新的Patch的位置上。
+5.git reset 这个好像用的没下面这个多
+  git reset --hard 从暂存区恢复到工作文件。这个就会回到新建一个工作区的时候的初期状态，也就是你想把新代码做一次最新的提交的时候
+6.git add XXXX.XXXX.XXXX.XXXX
+  像这种情况之下，是单个单个的加想提交的文件到缓存区里面
+7.repo sycn，这个是用来同步化的，可以直接进行相关的master branch的同步操作
+8.gitk 用来查看当前的工作区。看完之后不要忘记关闭工作区界面再进行下面命令行的执行
+9.git branch
+  用来查看当前建立的工作区。很可能会有多个，这个时候也可以进行删操作，不过前提是不在当前的工作区进行删除的操作。
+10.git remove XXX。
+  用来进行某个工作区branch的移除操作。
