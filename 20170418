@@ -1,0 +1,16 @@
+repo command 
+repo init
+repo 和git的關係是repo是git 的封装。
+manifest.xml is the mapping to manifest reposity
+and usually it has a mapping to default.xml
+-u means using the defined url to initialize 
+git 
+-m means using defined manifest file
+-b means using defined branch 
+
+repo sync has two main functions
+repo all manifest projects when no parameter
+defined
+repo defined manifest project when project
+defined
+
