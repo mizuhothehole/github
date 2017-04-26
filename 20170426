@@ -10,3 +10,9 @@ $ ssh-add -D：delete all ssh keys in ssh-agent
 add ssh public key to github settings：https://github.com/settings/keys
 
 $ ssh git@githun.com ：test ssh connection
+$ git clone git@githun.com：userName/projectName.git ： download a github project and enable repo
+
+under gerrit：
+$ repo init ： this will make the repo tool installized in your local machine
+$ repo sycn ： this will make the code downloaded into local
+
