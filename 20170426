@@ -14,5 +14,11 @@ $ git clone git@githun.com：userName/projectName.git ： download a github proj
 
 under gerrit：
 $ repo init ： this will make the repo tool installized in your local machine
-$ repo sycn ： this will make the code downloaded into local
+$ repo sycn ： this will make the code downloaded into local. this is tried and the files will be
+               downloaded to a folder named github
+               Any way the data is downloaded from the port of ssh. A key is necessary
+gitlist：by using this you can bind the data in local with the github site. Anyway I failed in
+android studio on a Macbook
+               
+               
 
