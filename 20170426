@@ -1,0 +1,12 @@
+Using Git by SSH
+
+$ ssh-keygen -t rsa -C goldeyeqin@gmail.com ： generate ssh key into ～/.ssh
+
+$ ssh-add -l ： see all local shh private keys
+$ ssh-add： add private key in ～/.ssh into local port. make it contrainting ssh port.
+$ ssh-add -d id_xxx.pub： delete a ssh key in ssh-agent
+$ ssh-add -D：delete all ssh keys in ssh-agent
+
+add ssh public key to github settings：https://github.com/settings/keys
+
+$ ssh git@githun.com ：test ssh connection
