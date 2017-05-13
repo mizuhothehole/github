@@ -9,6 +9,7 @@ How to push a project to github
 6.add the files in your local repository. this stages them for the first commit.
   $git add .
 7.commit the files you have staged in your local repository
+  $git commit -m “comments of the message”
 8.at the top of github repository's quick setup page, copy the remote reposity URL.
 9.In terminal, add the remote reposity where your local reposity will be pushed
   $ git remote add origin [remote repository URL]
