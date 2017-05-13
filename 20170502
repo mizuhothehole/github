@@ -13,7 +13,8 @@ How to push a project to github
 8.at the top of github repository's quick setup page, copy the remote reposity URL.
 9.In terminal, add the remote reposity where your local reposity will be pushed
   $ git remote add origin [remote repository URL]
-  # Sets the new remote
+  # Sets the new remote. If there is an error like “fatal: remote origin already exists”，use this command to solve it：
+  $ git remove rm origin （optional command）
   $ git remote -v
   # Verifies the new remote URL
 10.Push the changes in your local repository to GitHub.
