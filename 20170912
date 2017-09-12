@@ -1,0 +1,29 @@
+Some summary about git commands
+
+Workspace --> Index(stage) --> Local resposity
+
+git init: initialize the components we may use in the .git, so as to use the functions of git
+git sync: sync a project of remote resposity and down load to local
+git pull: download a commit from remote
+git fetch: download a commit from remote with a "edit" function, which makes you commit it again in the same patch
+git branch <branch> : start a new workplace in local
+git checkout <branch> : change to another branch of workplace
+git diff: show the difference of your local workplace and local resposity.
+git log: show recent commit logs, use "Q" to quit
+git add: add the local changes to index
+git status: show current local workplace status. All the tracked files will be shown, when the file is in index, it will
+            be shown as green, and if the tracked files are not added to index, the file name will be shown as red.
+git add <filename>: this will add your file name to index of your local machine.
+git add -A: this will add all your changed files into your local index.
+git commit: commit your change as a new patch into local resposity
+git commit --amend: commit your changes amending the patch before your branch to your local resposity.
+git branch <branchA> <branchB>: create a workplace called branchA based on branchB
+gitk: give a graphic interface to users to show current tracked files status
+
+repo is wrapped git, developped by google.
+
+repo: repo is developped by phython, which is a wrap of git commands.
+repo init: initialize the components of repo into a file called .repo, which makes us to use the repo commands
+repo sync: stronger than git sync
+repo start .XXX: almost same as git branch, but stronger
+repo upload: upload local resposity to remote resposity
