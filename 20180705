@@ -1,0 +1,12 @@
+Git add ., git ann -A and git add -u
+
+当git的版本是1.x的时候
+git add .，只增加modified，new的文件，不增加delete的文件
+git add -A,全部增加。增加全部种类
+git add -u，只增加delete, modified
+
+当git的版本是2.x的时候
+git add .,增加全部
+git add -A,增加全部
+git add -u,只增加delete,modified
+
