@@ -10,3 +10,29 @@ git add .,增加全部
 git add -A,增加全部
 git add -u,只增加delete,modified
 
+The difference between git merge and git rebase.
+
+Usage:
+on branch master: git merge branchA
+on branch master: git rebase branchB
+
+The result of using them is the same: the two branches of code merged.
+However, one thing is not so good, what if there is conflict?
+When you use git rebase to merge two different branches, it will show you 3 options:
+
+git rebase --continue
+git rebase --skip
+git rebase --abord
+
+git rebase --continue means you would like to continue the merge.
+However, before you do this kind of operation, you have to do the git add first of all.
+And after you did this, you then need to have better check if you code has compile errors. Once you use git rebase continue, the 
+compile errors due to your wrong merge will affect the project all.
+Extremely, you could do git add with all the conflicts without any kinds of fixing. And then do your git rebase --continue
+
+git rebase --skip
+This means you skip the commit on master and just do the rebase.
+
+git rebase --abord
+This means you skip the rebase operation and just roll back.
+
