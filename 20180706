@@ -1,6 +1,8 @@
 Testing git usage
 
 git rebase 实战
+另外，一个很好用的命令：
+git log --pretty=oneline
 
 我今天尝试了用git rebase这个命令
 
@@ -19,6 +21,13 @@ first > new 1 > new 2 > master 1 > master 2
 
 这是为什么呢？
 原来rebase是一个合并作用。和git merge一样。不过merge会留下另外一个分支的记录，而rebase不会留下记录，而且比较灵活。
+
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git log --pretty=oneline
+ca3ab49609aeafcc0c27d22a2a1224633490c57b (HEAD -> master) master 2
+01784ac1776c6989ac8282baff20cbc2445da160 master 1
+1fab39cbec1ce05d70fb068ce42152e1ddd1ab19 (new) new 2
+f89f8444e516d1a83d450823a3794dc797810ea8 new 1
+86e7ce6d6d6c4a521ba442d6d233a3fa2570bc8e first
 
 ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git log master
 commit ca3ab49609aeafcc0c27d22a2a1224633490c57b (HEAD -> master)
@@ -51,3 +60,93 @@ Date:   Fri Jul 6 23:01:05 2018 +0900
 
     first
     
+----------------------------git 时光机器-------------------------------------------------
+另外，HEAD，实际上就是一个指针。
+
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git reset --hard 1fab39cbec1ce05d70fb068ce42152e1ddd1ab19
+HEAD is now at 1fab39c new 2
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git log
+commit 1fab39cbec1ce05d70fb068ce42152e1ddd1ab19 (HEAD -> master, new)
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:02:06 2018 +0900
+
+    new 2
+
+commit f89f8444e516d1a83d450823a3794dc797810ea8
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:01:47 2018 +0900
+
+    new 1
+
+commit 86e7ce6d6d6c4a521ba442d6d233a3fa2570bc8e
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:01:05 2018 +0900
+
+    first
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git reset --hard f89f8444e516d1a83d450823a3794dc797810ea8
+HEAD is now at f89f844 new 1
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git log
+commit f89f8444e516d1a83d450823a3794dc797810ea8 (HEAD -> master)
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:01:47 2018 +0900
+
+    new 1
+
+commit 86e7ce6d6d6c4a521ba442d6d233a3fa2570bc8e
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:01:05 2018 +0900
+
+    first
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git reflog
+f89f844 (HEAD -> master) HEAD@{0}: reset: moving to f89f8444e516d1a83d450823a3794dc797810ea8
+1fab39c (new) HEAD@{1}: reset: moving to 1fab39cbec1ce05d70fb068ce42152e1ddd1ab19
+ca3ab49 HEAD@{2}: rebase finished: returning to refs/heads/master
+ca3ab49 HEAD@{3}: rebase: master 2
+01784ac HEAD@{4}: rebase: master 1
+1fab39c (new) HEAD@{5}: rebase: checkout new
+34a675d HEAD@{6}: rebase: updating HEAD
+34a675d HEAD@{7}: rebase: aborting
+4739ba0 HEAD@{8}: rebase: master 1
+1fab39c (new) HEAD@{9}: rebase: checkout new
+34a675d HEAD@{10}: rebase: updating HEAD
+34a675d HEAD@{11}: rebase: aborting
+34a675d HEAD@{12}: checkout: moving from f96a5310e631fb641421acb776612c4d44925a75 to master
+f96a531 HEAD@{13}: commit: hi, conf
+c2f9b63 HEAD@{14}: rebase: master 1
+1fab39c (new) HEAD@{15}: rebase: checkout new
+34a675d HEAD@{16}: commit: master 2
+cf310be HEAD@{17}: commit: master 1
+86e7ce6 HEAD@{18}: checkout: moving from new to master
+1fab39c (new) HEAD@{19}: commit: new 2
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git reset --hard ca3ab49
+HEAD is now at ca3ab49 master 2
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git log
+commit ca3ab49609aeafcc0c27d22a2a1224633490c57b (HEAD -> master)
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:03:27 2018 +0900
+
+    master 2
+
+commit 01784ac1776c6989ac8282baff20cbc2445da160
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:02:48 2018 +0900
+
+    master 1
+
+commit 1fab39cbec1ce05d70fb068ce42152e1ddd1ab19 (new)
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:02:06 2018 +0900
+
+    new 2
+
+commit f89f8444e516d1a83d450823a3794dc797810ea8
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:01:47 2018 +0900
+
+    new 1
+
+commit 86e7ce6d6d6c4a521ba442d6d233a3fa2570bc8e
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:01:05 2018 +0900
+
+    first
