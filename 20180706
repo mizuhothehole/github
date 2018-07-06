@@ -1,1 +1,22 @@
 Testing git usage
+
+git rebase 实战
+
+我今天尝试了用git rebase这个命令
+
+首先是
+下面两个分支的一些提交：
+
+我现在master分支上建立了首次commit， 名字叫做first commit。然后在这个时候用git checkout -b 新分支出来一个branch，名字叫做new。
+
+master： first commit > commit 1 > commit 2
+
+new： new 1 > new 2
+
+然后我在master分支上用了git rebase命令：
+最后变成这样：
+first commit > new 1 > new 2 > commit 1 > commit 2
+
+这是为什么呢？
+原来rebase是一个合并作用。和git merge一样。不过merge会留下另外一个分支的记录，而rebase不会留下记录，而且比较灵活。
+
