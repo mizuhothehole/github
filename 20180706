@@ -9,14 +9,45 @@ git rebase 实战
 
 我现在master分支上建立了首次commit， 名字叫做first commit。然后在这个时候用git checkout -b 新分支出来一个branch，名字叫做new。
 
-master： first commit > commit 1 > commit 2
+master： first > master 1 > master 2
 
 new： new 1 > new 2
 
 然后我在master分支上用了git rebase命令：
 最后变成这样：
-first commit > new 1 > new 2 > commit 1 > commit 2
+first > new 1 > new 2 > master 1 > master 2
 
 这是为什么呢？
 原来rebase是一个合并作用。和git merge一样。不过merge会留下另外一个分支的记录，而rebase不会留下记录，而且比较灵活。
 
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git log master
+commit ca3ab49609aeafcc0c27d22a2a1224633490c57b (HEAD -> master)
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:03:27 2018 +0900
+
+    master 2
+
+commit 01784ac1776c6989ac8282baff20cbc2445da160
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:02:48 2018 +0900
+
+    master 1
+
+commit 1fab39cbec1ce05d70fb068ce42152e1ddd1ab19 (new)
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:02:06 2018 +0900
+
+    new 2
+
+commit f89f8444e516d1a83d450823a3794dc797810ea8
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:01:47 2018 +0900
+
+    new 1
+
+commit 86e7ce6d6d6c4a521ba442d6d233a3fa2570bc8e
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:01:05 2018 +0900
+
+    first
+    
