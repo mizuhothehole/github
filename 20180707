@@ -5,6 +5,7 @@ git reset HEAD^^
 git reset HEAD^^^
 git reset HEAD^^^^
 git reset HEAD~100
+git commit -m "test commit message"
 
 Last login: Fri Jul  6 22:06:28 on ttys000
 ishiiryou-no-MacBook-Air:~ ishiiaya$ git branch
@@ -507,3 +508,31 @@ Date:   Fri Jul 6 23:02:06 2018 +0900
     new 2
 ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ 
 
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git checkout master
+Already on 'master'
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ vi a.md 
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git add .
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git commit -m hhhaaa <- HERE IS THE BEST WAY TO DO COMMITS
+[master 226fd7e] hhhaaa
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git show
+commit 226fd7e4796e8444707d052b38221cb0eb8ead8a (HEAD -> master)
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Sat Jul 7 11:19:58 2018 +0900
+
+    hhhaaa
+
+diff --git a/a.md b/a.md
+index 849e58b..ae765cb 100644
+--- a/a.md
++++ b/a.md
+@@ -1 +1 @@
+-d222aasadsadasdasd
++daaa222aasadsadasdasd
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ vi a.md 
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git add .
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git commit --amend
+[master b62d6dd] haaaahhaaa
+ Date: Sat Jul 7 11:19:58 2018 +0900
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ 
