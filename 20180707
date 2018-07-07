@@ -1,0 +1,509 @@
+git show
+git reset HEAD
+git reset HEAD^
+git reset HEAD^^
+git reset HEAD^^^
+git reset HEAD^^^^
+git reset HEAD~100
+
+Last login: Fri Jul  6 22:06:28 on ttys000
+ishiiryou-no-MacBook-Air:~ ishiiaya$ git branch
+fatal: Not a git repository (or any of the parent directories): .git
+ishiiryou-no-MacBook-Air:~ ishiiaya$ cd /Users/ishiiaya/Desktop/名称未設定フォルダ 
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git branch
+* master
+  new
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git gc
+Counting objects: 24, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (24/24), done.
+Total 24 (delta 5), reused 0 (delta 0)
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git branch
+* master
+  new
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git log new
+commit 1fab39cbec1ce05d70fb068ce42152e1ddd1ab19 (new)
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:02:06 2018 +0900
+
+    new 2
+
+commit f89f8444e516d1a83d450823a3794dc797810ea8
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:01:47 2018 +0900
+
+    new 1
+
+commit 86e7ce6d6d6c4a521ba442d6d233a3fa2570bc8e
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:01:05 2018 +0900
+
+    first
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git log master
+commit ca3ab49609aeafcc0c27d22a2a1224633490c57b (HEAD -> master)
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:03:27 2018 +0900
+
+    master 2
+
+
+commit 01784ac1776c6989ac8282baff20cbc2445da160
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:02:48 2018 +0900
+
+    master 1
+
+commit 1fab39cbec1ce05d70fb068ce42152e1ddd1ab19 (new)
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:02:06 2018 +0900
+
+    new 2
+
+commit f89f8444e516d1a83d450823a3794dc797810ea8
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:01:47 2018 +0900
+
+    new 1
+
+commit 86e7ce6d6d6c4a521ba442d6d233a3fa2570bc8e
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:01:05 2018 +0900
+
+    first
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ clear
+
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ ls
+a.md
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git log --preety=oneline
+fatal: unrecognized argument: --preety=oneline
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git log --pretty=oneline
+ca3ab49609aeafcc0c27d22a2a1224633490c57b (HEAD -> master) master 2
+01784ac1776c6989ac8282baff20cbc2445da160 master 1
+1fab39cbec1ce05d70fb068ce42152e1ddd1ab19 (new) new 2
+f89f8444e516d1a83d450823a3794dc797810ea8 new 1
+86e7ce6d6d6c4a521ba442d6d233a3fa2570bc8e first
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ 
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git reset --hard 1fab39cbec1ce05d70fb068ce42152e1ddd1ab19
+HEAD is now at 1fab39c new 2
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git log
+commit 1fab39cbec1ce05d70fb068ce42152e1ddd1ab19 (HEAD -> master, new)
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:02:06 2018 +0900
+
+    new 2
+
+commit f89f8444e516d1a83d450823a3794dc797810ea8
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:01:47 2018 +0900
+
+    new 1
+
+commit 86e7ce6d6d6c4a521ba442d6d233a3fa2570bc8e
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:01:05 2018 +0900
+
+    first
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git reset --hard f89f8444e516d1a83d450823a3794dc797810ea8
+HEAD is now at f89f844 new 1
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git log
+commit f89f8444e516d1a83d450823a3794dc797810ea8 (HEAD -> master)
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:01:47 2018 +0900
+
+    new 1
+
+commit 86e7ce6d6d6c4a521ba442d6d233a3fa2570bc8e
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:01:05 2018 +0900
+
+    first
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git reflog
+f89f844 (HEAD -> master) HEAD@{0}: reset: moving to f89f8444e516d1a83d450823a3794dc797810ea8
+1fab39c (new) HEAD@{1}: reset: moving to 1fab39cbec1ce05d70fb068ce42152e1ddd1ab19
+ca3ab49 HEAD@{2}: rebase finished: returning to refs/heads/master
+ca3ab49 HEAD@{3}: rebase: master 2
+01784ac HEAD@{4}: rebase: master 1
+1fab39c (new) HEAD@{5}: rebase: checkout new
+34a675d HEAD@{6}: rebase: updating HEAD
+34a675d HEAD@{7}: rebase: aborting
+4739ba0 HEAD@{8}: rebase: master 1
+1fab39c (new) HEAD@{9}: rebase: checkout new
+34a675d HEAD@{10}: rebase: updating HEAD
+34a675d HEAD@{11}: rebase: aborting
+34a675d HEAD@{12}: checkout: moving from f96a5310e631fb641421acb776612c4d44925a75 to master
+f96a531 HEAD@{13}: commit: hi, conf
+c2f9b63 HEAD@{14}: rebase: master 1
+1fab39c (new) HEAD@{15}: rebase: checkout new
+34a675d HEAD@{16}: commit: master 2
+cf310be HEAD@{17}: commit: master 1
+86e7ce6 HEAD@{18}: checkout: moving from new to master
+1fab39c (new) HEAD@{19}: commit: new 2
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git reset --hard ca3ab49
+HEAD is now at ca3ab49 master 2
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git log
+commit ca3ab49609aeafcc0c27d22a2a1224633490c57b (HEAD -> master)
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:03:27 2018 +0900
+
+    master 2
+
+commit 01784ac1776c6989ac8282baff20cbc2445da160
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:02:48 2018 +0900
+
+    master 1
+
+commit 1fab39cbec1ce05d70fb068ce42152e1ddd1ab19 (new)
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:02:06 2018 +0900
+
+    new 2
+
+commit f89f8444e516d1a83d450823a3794dc797810ea8
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:01:47 2018 +0900
+
+    new 1
+
+commit 86e7ce6d6d6c4a521ba442d6d233a3fa2570bc8e
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:01:05 2018 +0900
+
+    first
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git log --pretty=oneline
+ca3ab49609aeafcc0c27d22a2a1224633490c57b (HEAD -> master) master 2
+01784ac1776c6989ac8282baff20cbc2445da160 master 1
+1fab39cbec1ce05d70fb068ce42152e1ddd1ab19 (new) new 2
+f89f8444e516d1a83d450823a3794dc797810ea8 new 1
+86e7ce6d6d6c4a521ba442d6d233a3fa2570bc8e first
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ 
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ 
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git log --pretty=oneline
+ca3ab49609aeafcc0c27d22a2a1224633490c57b (HEAD -> master) master 2
+01784ac1776c6989ac8282baff20cbc2445da160 master 1
+1fab39cbec1ce05d70fb068ce42152e1ddd1ab19 (new) new 2
+f89f8444e516d1a83d450823a3794dc797810ea8 new 1
+86e7ce6d6d6c4a521ba442d6d233a3fa2570bc8e first
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git --help
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect     Use binary search to find the commit that introduced a bug
+   grep       Print lines matching a pattern
+   log        Show commit logs
+   show       Show various types of objects
+   status     Show the working tree status
+
+grow, mark and tweak your common history
+   branch     List, create, or delete branches
+   checkout   Switch branches or restore working tree files
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   merge      Join two or more development histories together
+   rebase     Reapply commits on top of another base tip
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch      Download objects and refs from another repository
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git show
+commit ca3ab49609aeafcc0c27d22a2a1224633490c57b (HEAD -> master)
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:03:27 2018 +0900
+
+    master 2
+
+diff --git a/a.md b/a.md
+index 5ac16ca..f9d71c7 100644
+--- a/a.md
++++ b/a.md
+@@ -1 +1 @@
+-dasdasd
++daasadsadasdasd
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git bisect
+usage: git bisect [help|start|bad|good|new|old|terms|skip|next|reset|visualize|replay|log|run]
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git bisect start
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git bisect new
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git bisect log
+git bisect start
+# new: [ca3ab49609aeafcc0c27d22a2a1224633490c57b] master 2
+git bisect new ca3ab49609aeafcc0c27d22a2a1224633490c57b
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ clear
+
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git branch
+* master
+  new
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git log master
+commit ca3ab49609aeafcc0c27d22a2a1224633490c57b (HEAD -> master, refs/bisect/new)
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:03:27 2018 +0900
+
+    master 2
+
+commit ca3ab49609aeafcc0c27d22a2a1224633490c57b (HEAD -> master, refs/bisect/new
+)
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:03:27 2018 +0900
+
+    master 2
+
+commit 01784ac1776c6989ac8282baff20cbc2445da160
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:02:48 2018 +0900
+
+    master 1
+
+commit 1fab39cbec1ce05d70fb068ce42152e1ddd1ab19 (new)
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:02:06 2018 +0900
+
+    new 2
+
+commit f89f8444e516d1a83d450823a3794dc797810ea8
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:01:47 2018 +0900
+
+    new 1
+
+commit 86e7ce6d6d6c4a521ba442d6d233a3fa2570bc8e
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:01:05 2018 +0900
+
+    first
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ clear
+
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ vim a.md 
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git status
+On branch master
+You are currently bisecting, started from branch 'master'.
+  (use "git bisect reset" to get back to the original branch)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   a.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git add .
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git commit
+[master 4c69612] xxx
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git show
+commit 4c69612391d7acdce4f9805b58ac95fc88fbd39c (HEAD -> master)
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Sat Jul 7 10:10:48 2018 +0900
+
+    xxx
+
+diff --git a/a.md b/a.md
+index f9d71c7..849e58b 100644
+--- a/a.md
++++ b/a.md
+@@ -1 +1 @@
+-daasadsadasdasd
++d222aasadsadasdasd
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git --help
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect     Use binary search to find the commit that introduced a bug
+   grep       Print lines matching a pattern
+   log        Show commit logs
+   show       Show various types of objects
+   status     Show the working tree status
+
+grow, mark and tweak your common history
+   branch     List, create, or delete branches
+   checkout   Switch branches or restore working tree files
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   merge      Join two or more development histories together
+   rebase     Reapply commits on top of another base tip
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch      Download objects and refs from another repository
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git reset HEAD~1
+Unstaged changes after reset:
+M	a.md
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git log master
+commit ca3ab49609aeafcc0c27d22a2a1224633490c57b (HEAD -> master, refs/bisect/new)
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:03:27 2018 +0900
+
+    master 2
+
+commit 01784ac1776c6989ac8282baff20cbc2445da160
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:02:48 2018 +0900
+
+    master 1
+
+commit 1fab39cbec1ce05d70fb068ce42152e1ddd1ab19 (new)
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:02:06 2018 +0900
+
+    new 2
+
+commit f89f8444e516d1a83d450823a3794dc797810ea8
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:01:47 2018 +0900
+
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ clear
+
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git reset HEAD~100
+fatal: ambiguous argument 'HEAD~100': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git reset HEAD^
+Unstaged changes after reset:
+M	a.md
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git log head
+commit 01784ac1776c6989ac8282baff20cbc2445da160 (HEAD -> master)
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:02:48 2018 +0900
+
+    master 1
+
+commit 1fab39cbec1ce05d70fb068ce42152e1ddd1ab19 (new)
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:02:06 2018 +0900
+
+    new 2
+
+commit f89f8444e516d1a83d450823a3794dc797810ea8
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:01:47 2018 +0900
+
+    new 1
+
+commit 86e7ce6d6d6c4a521ba442d6d233a3fa2570bc8e
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:01:05 2018 +0900
+
+    first
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ clear
+
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git reset HEAD
+Unstaged changes after reset:
+M	a.md
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git log master
+commit 01784ac1776c6989ac8282baff20cbc2445da160 (HEAD -> master)
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:02:48 2018 +0900
+
+    master 1
+
+commit 1fab39cbec1ce05d70fb068ce42152e1ddd1ab19 (new)
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:02:06 2018 +0900
+
+    new 2
+
+commit f89f8444e516d1a83d450823a3794dc797810ea8
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:01:47 2018 +0900
+
+    new 1
+
+commit 86e7ce6d6d6c4a521ba442d6d233a3fa2570bc8e
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:01:05 2018 +0900
+
+    first
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ clear
+
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git reflog
+01784ac (HEAD -> master) HEAD@{0}: reset: moving to HEAD
+01784ac (HEAD -> master) HEAD@{1}: reset: moving to HEAD^
+ca3ab49 (refs/bisect/new) HEAD@{2}: reset: moving to HEAD~1
+4c69612 HEAD@{3}: commit: xxx
+ca3ab49 (refs/bisect/new) HEAD@{4}: reset: moving to ca3ab49
+f89f844 HEAD@{5}: reset: moving to f89f8444e516d1a83d450823a3794dc797810ea8
+1fab39c (new) HEAD@{6}: reset: moving to 1fab39cbec1ce05d70fb068ce42152e1ddd1ab19
+ca3ab49 (refs/bisect/new) HEAD@{7}: rebase finished: returning to refs/heads/master
+ca3ab49 (refs/bisect/new) HEAD@{8}: rebase: master 2
+01784ac (HEAD -> master) HEAD@{9}: rebase: master 1
+1fab39c (new) HEAD@{10}: rebase: checkout new
+34a675d HEAD@{11}: rebase: updating HEAD
+34a675d HEAD@{12}: rebase: aborting
+4739ba0 HEAD@{13}: rebase: master 1
+1fab39c (new) HEAD@{14}: rebase: checkout new
+34a675d HEAD@{15}: rebase: updating HEAD
+34a675d HEAD@{16}: rebase: aborting
+34a675d HEAD@{17}: checkout: moving from f96a5310e631fb641421acb776612c4d44925a75 to master
+f96a531 HEAD@{18}: commit: hi, conf
+c2f9b63 HEAD@{19}: rebase: master 1
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git reset --hard 4c69612
+HEAD is now at 4c69612 xxx
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ git log master
+commit 4c69612391d7acdce4f9805b58ac95fc88fbd39c (HEAD -> master)
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Sat Jul 7 10:10:48 2018 +0900
+
+    xxx
+
+commit ca3ab49609aeafcc0c27d22a2a1224633490c57b (refs/bisect/new)
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:03:27 2018 +0900
+
+    master 2
+
+commit 01784ac1776c6989ac8282baff20cbc2445da160
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:02:48 2018 +0900
+
+    master 1
+
+commit 1fab39cbec1ce05d70fb068ce42152e1ddd1ab19 (new)
+Author: mizuhothehole <goldeyeqin@gmail.com>
+Date:   Fri Jul 6 23:02:06 2018 +0900
+
+    new 2
+ishiiryou-no-MacBook-Air:名称未設定フォルダ ishiiaya$ 
+
